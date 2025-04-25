@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="./img/logo.png">
+  <title>Chat-main</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+
+<body class="">
+  <header>
+    <div class="container">
+      <div class="flex">
+
+        <div class="flex">
+          <button class="myProfile-btn" onclick="location.href='profile.html'">
+            <div class="flex">
+              <img id="profile-img" class="profileava" src="./img/profileava.png" alt="Profile Image">
+              <h1>Myname</h1>
+            </div>
+          </button>
+        </div>
+        <div class="flex">
+          <!-- cameraga otish buttoni -->
+          <label for="camera-input" class="camera-btn">
+            <i id="camera-icon" class="fa-solid fa-camera"></i>
+          </label>
+          <input type="file" id="camera-input" accept="image/*" style="display:none;" />
+          <button class="darkMode-btn" id="modeToggleBtn">
+            <i class="fa-solid fa-moon" id="modeIcon"></i>
+          </button>
+        </div>
+      </div>
+      <div class="search-inp">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="search" class="input-search" type="text" placeholder="Qidirish . . .">
+      </div>
+
+    </div>
+    </div>
+  </header>
+
+  
+  <main>
+
+    <!-- contact-uchun-container -->
+
+    <div class="container contacts-container">
+      <!-- Test uchun contacktlar -->
+
+
+    </div>
+    <div id="not-found" class="empty" style="display: none;"> <img class="not-found-gif" src="./Gif-not-found.gif"></img><br>
+      Hech narsa topilmadi!!</div>
+
+
+  </main>
+
+
+  <footer>
+    <div class="nav">
+
+      <button class="nav-icon " id="Chats" onclick=" setActive('chat') "><i
+          class="fa-solid fa-comment"></i></button>
+      <button class="nav-icon active" id="Contacts" onclick="setActive('contact')"><i
+          class="fa-solid fa-user-group"></i></button>
+      <button class="nav-icon" id="Browser" onclick="setActive('browser')"><i
+          class="fa-solid fa-compass"></i></i></button>
+    </div>
+
+  </footer>
+  <div id="loading" class="loading-container">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <div class="content">
+
+  </div>
+
+  <script src="./index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./contacts.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: -450,
+      grabCursor: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+  <script>
+    var swiper = new Swiper(".myContactSwiper", {
+      initialSlide: 1,
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: -450,
+      threshold: 200,
+    });
+
+    const contactSwiper = document.querySelector(".myContactSwiper ");
+
+
+
+
+  </script>
+
+</body>
+
+</html>

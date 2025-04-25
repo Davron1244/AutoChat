@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat-Messager</title>
+    <link rel="icon" type="image/png" href="./img/logo.png" />
+    <link rel="stylesheet" href="./css/chat.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body class="">
+    <header>
+        <div class="container">
+            <div class="flex">
+                <div class="flex-profile">
+                    <button class="back-btn" onclick="window.history.back()">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+                    <button class="contacts-profile-btn" onclick="window.location.href = 'ContactProfile.html'">
+              <div class="flex">
+                <img src="./img/freindsava.svg" alt="" />
+                <div class="names">
+                  <h1 class="contact-firstname">Chilonzor</h1>
+                  <h1 class="contact-lastname">Tumani</h1>
+                </div>
+              </div>
+            </button>
+                </div>
+                <div class="flex-call">
+                    <button id="call-btn" class="call-btn" onclick="location.href='call.html'">
+              <i class="fa-solid fa-phone"></i>
+            </button>
+                    <button id="videoCall-btn" class="videoCall-btn" onclick="location.href='VideoCall.html'">
+              <i class="fa-solid fa-video"></i>
+            </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="messages" id="chat">
+            <div class="timestamp">16:44</div>
+            <div class="message from-contact">
+                Salom, User qandaysiz ishlaringiz qalay!
+            </div>
+            <div class="message from-contact">
+                Bugun qayerga boramiz janob, bugun kun zo'r a
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="box">
+                <div class="flex-footer">
+                    <label id="emojiBtn" for="Smile"><i class="fa-solid fa-face-smile"></i
+            ></label>
+                    <label for="ImgInput"><i class="fa-regular fa-image"></i></label>
+                    <input type="file" accept="image/*" id="ImgInput" style="display: none" />
+                    <div class="input-box">
+                        <input type="text" id="msgInput" placeholder="Aa" />
+                        <button disabled type="submit" id="send-btn" onclick="sendMessage()">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+                    </div>
+                    <label for="GolosInput"><i class="fa-solid fa-microphone"></i></label>
+                    <input type="file" id="audioInput" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Emoji Panel -->
+    <div class="emoji-panel" id="emojiPanel">
+        <span class="emoji" onclick="insertEmoji('😀')">😀</span>
+        <span class="emoji" onclick="insertEmoji('😁')">😁</span>
+        <span class="emoji" onclick="insertEmoji('😂')">😂</span>
+        <span class="emoji" onclick="insertEmoji('🤣')">🤣</span>
+        <span class="emoji" onclick="insertEmoji('😃')">😃</span>
+        <span class="emoji" onclick="insertEmoji('😄')">😄</span>
+        <span class="emoji" onclick="insertEmoji('😅')">😅</span>
+        <span class="emoji" onclick="insertEmoji('😆')">😆</span>
+        <span class="emoji" onclick="insertEmoji('😉')">😉</span>
+        <span class="emoji" onclick="insertEmoji('😊')">😊</span>
+        <span class="emoji" onclick="insertEmoji('😋')">😋</span>
+        <span class="emoji" onclick="insertEmoji('😎')">😎</span>
+        <span class="emoji" onclick="insertEmoji('😍')">😍</span>
+        <span class="emoji" onclick="insertEmoji('😘')">😘</span>
+        <span class="emoji" onclick="insertEmoji('😗')">😗</span>
+        <span class="emoji" onclick="insertEmoji('😙')">😙</span>
+        <span class="emoji" onclick="insertEmoji('😚')">😚</span>
+        <span class="emoji" onclick="insertEmoji('🙂')">🙂</span>
+        <span class="emoji" onclick="insertEmoji('🤗')">🤗</span>
+        <span class="emoji" onclick="insertEmoji('🤩')">🤩</span>
+        <span class="emoji" onclick="insertEmoji('🤔')">🤔</span>
+        <span class="emoji" onclick="insertEmoji('🤨')">🤨</span>
+        <span class="emoji" onclick="insertEmoji('😐')">😐</span>
+        <span class="emoji" onclick="insertEmoji('😑')">😑</span>
+        <span class="emoji" onclick="insertEmoji('😶')">😶</span>
+        <span class="emoji" onclick="insertEmoji('🙄')">🙄</span>
+        <span class="emoji" onclick="insertEmoji('😏')">😏</span>
+        <span class="emoji" onclick="insertEmoji('😣')">😣</span>
+        <span class="emoji" onclick="insertEmoji('😥')">😥</span>
+        <span class="emoji" onclick="insertEmoji('😮')">😮</span>
+        <span class="emoji" onclick="insertEmoji('🤐')">🤐</span>
+        <span class="emoji" onclick="insertEmoji('😯')">😯</span>
+        <span class="emoji" onclick="insertEmoji('😪')">😪</span>
+        <span class="emoji" onclick="insertEmoji('😫')">😫</span>
+        <span class="emoji" onclick="insertEmoji('🥱')">🥱</span>
+        <span class="emoji" onclick="insertEmoji('😴')">😴</span>
+        <span class="emoji" onclick="insertEmoji('😌')">😌</span>
+        <span class="emoji" onclick="insertEmoji('😛')">😛</span>
+        <span class="emoji" onclick="insertEmoji('😜')">😜</span>
+        <span class="emoji" onclick="insertEmoji('😝')">😝</span>
+        <span class="emoji" onclick="insertEmoji('🤤')">🤤</span>
+        <span class="emoji" onclick="insertEmoji('😒')">😒</span>
+        <span class="emoji" onclick="insertEmoji('😓')">😓</span>
+        <span class="emoji" onclick="insertEmoji('😭')">😭</span>
+        <span class="emoji" onclick="insertEmoji('😡')">😡</span>
+        <span class="emoji" onclick="insertEmoji('😠')">😠</span>
+        <span class="emoji" onclick="insertEmoji('🔥')">🔥</span>
+        <span class="emoji" onclick="insertEmoji('💯')">💯</span>
+        <span class="emoji" onclick="insertEmoji('❤️')">❤️</span>
+        <span class="emoji" onclick="insertEmoji('💔')">💔</span>
+        <span class="emoji" onclick="insertEmoji('✨')">✨</span>
+        <span class="emoji" onclick="insertEmoji('🌟')">🌟</span>
+        <span class="emoji" onclick="insertEmoji('💥')">💥</span>
+        <span class="emoji" onclick="insertEmoji('💫')">💫</span>
+        <span class="emoji" onclick="insertEmoji('💦')">💦</span>
+        <span class="emoji" onclick="insertEmoji('💨')">💨</span>
+        <span class="emoji" onclick="insertEmoji('🕳️')">🕳️</span>
+        <span class="emoji" onclick="insertEmoji('💧')">💧</span>
+        <span class="emoji" onclick="insertEmoji('🌈')">🌈</span>
+        <span class="emoji" onclick="insertEmoji('🌊')">🌊</span>
+        <span class="emoji" onclick="insertEmoji('🌪️')">🌪️</span>
+        <span class="emoji" onclick="insertEmoji('🌍')">🌍</span>
+    </div>
+
+    <div id="loading" class="loading-container">
+        <div class="loading-spinner"></div>
+    </div>
+    <div class="content"></div>
+    <script src="./chat.js"></script>
+</body>
+
+</html>
