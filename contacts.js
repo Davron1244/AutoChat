@@ -1,4 +1,4 @@
-let contacts = JSON.parse(localStorage.getItem("contacts")) || [
+let contacts = JSON.parse(localStorage.getItem("Contactlar")) || [
     { id: 1, firstName: "Bektemir", lastName: "Tumani", image: "./img/  .svg" },
     { id: 2, firstName: "Chilonzor", lastName: "Tumani", image: "./img/fakeava.svg" },
     { id: 3, firstName: "Mirobod", lastName: "Tumani", image: "./img/fakeava.svg" },

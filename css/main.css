@@ -129,7 +129,9 @@ background-color: transparent;}
 }
 
 
-
+.dark header{
+  background-color: #000;
+}
 
 
 .dark .loading-container {
@@ -142,7 +144,7 @@ background-color: transparent;}
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 3000;
 }
 
 .dark .loading-spinner {
@@ -386,6 +388,12 @@ body {
 header {
   padding-top: 5px;
   padding: 10px;
+  position: fixed;
+top: 0;
+left: 0;
+background-color: #fff;
+width: 100%;
+z-index: 1506;
 }
 
 .myProfile-btn {
@@ -411,7 +419,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 3000;
 }
 
 .loading-spinner {
@@ -557,8 +565,8 @@ video {
 }
 
 .contacts-container {
-  margin-top: 50px;
-
+margin-bottom: 240px;
+margin-top: 280px;
 }
 
 .contact {
@@ -821,4 +829,10 @@ button{
 }
 i {
   text-align: center;
+}
+
+#darkToggle.active{
+transition: 0.8s ease-in-out;
+  transform: rotate(360deg);
+
 }

@@ -56,24 +56,23 @@
         <div class="container">
             <div class="box">
                 <div class="flex-footer">
-                    <label id="emojiBtn" for="Smile"><i class="fa-solid fa-face-smile"></i
-            ></label>
-                    <label for="ImgInput"><i class="fa-regular fa-image"></i></label>
+                    <label id="emojiBtn" class="buttons-footer" for="Smile"><i  class="fa-solid fa-face-smile"></i></label>
+                    <label  class="buttons-footer"  for="ImgInput"><i class="fa-regular fa-image"></i></label>
                     <input type="file" accept="image/*" id="ImgInput" style="display: none" />
                     <div class="input-box">
+                        
                         <input type="text" id="msgInput" placeholder="Aa" />
-                        <button disabled type="submit" id="send-btn" onclick="sendMessage()">
+                        <button  class="buttons-footer"   type="submit" id="send-btn" onclick="sendMessage()">
                 <i class="fa-solid fa-paper-plane"></i>
               </button>
                     </div>
-                    <label for="GolosInput"><i class="fa-solid fa-microphone"></i></label>
+                    <label  class="buttons-footer" for="GolosInput"><i class="fa-solid fa-microphone"></i></label>
                     <input type="file" id="audioInput" style="display: none;">
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Emoji Panel -->
     <div class="emoji-panel" id="emojiPanel">
         <span class="emoji" onclick="insertEmoji('😀')">😀</span>
         <span class="emoji" onclick="insertEmoji('😁')">😁</span>

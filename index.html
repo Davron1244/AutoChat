@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -22,21 +23,21 @@
 
                 <div class="flex">
                     <button class="myProfile-btn" onclick="location.href='profile.html'">
-            <div class="flex">
-              <img id="profile-img" class="profileava" src="./img/profileava.png" alt="Profile Image">
-              <h1>Myname</h1>
-            </div>
-          </button>
+                        <div class="flex">
+                            <img id="profile-img" class="profileava" src="./img/profileava.png" alt="Profile Image">
+                            <h1>Myname</h1>
+                        </div>
+                    </button>
                 </div>
                 <div class="flex">
                     <!-- cameraga otish buttoni -->
                     <label for="camera-input" class="camera-btn">
-            <i id="camera-icon" class="fa-solid fa-camera"></i>
-          </label>
+                        <i id="camera-icon" class="fa-solid fa-camera"></i>
+                    </label>
                     <input type="file" id="camera-input" accept="image/*" style="display:none;" />
-                    <button class="darkMode-btn" id="darkToggle">
-            <i class="fa-solid fa-moon" id="modeIcon"></i>
-          </button>
+                    <button onclick="DarkBtnAnimation()" class="darkMode-btn" id="darkToggle">
+                        <i   style="transition: 0.5s ease-in-out;" class="fa-solid fa-moon" id="modeIcon"></i>
+                    </button>
                 </div>
             </div>
             <div class="search-inp">
@@ -58,7 +59,8 @@
 
 
         </div>
-        <div id="not-found" class="empty" style="display: none;"> <img class="not-found-gif" src="./Gif-not-found.gif"></img><br> Hech narsa topilmadi!!</div>
+        <div id="not-found" class="empty" style="display: none;"> <img class="not-found-gif"
+                src="./Gif-not-found.gif"></img><br> Hech narsa topilmadi!!</div>
 
 
     </main>
@@ -68,11 +70,11 @@
         <div class="nav">
 
             <button class="nav-icon active" id="Chats" onclick=" setActive('chat') "><i
-          class="fa-solid fa-comment"></i></button>
+                    class="fa-solid fa-comment"></i></button>
             <button class="nav-icon" id="Contacts" onclick="setActive('contact')"><i
-          class="fa-solid fa-user-group"></i></button>
+                    class="fa-solid fa-user-group"></i></button>
             <button class="nav-icon" id="Browser" onclick="setActive('browser')"><i
-          class="fa-solid fa-compass"></i></i></button>
+                    class="fa-solid fa-compass"></i></i></button>
         </div>
 
     </footer>

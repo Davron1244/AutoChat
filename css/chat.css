@@ -62,7 +62,18 @@ body.dark {
     background: #FFFFFF33;
     color: #fff;
 }
-
+.dark .loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(110, 110, 110, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+  }
 .dark .from-user {
     background-color: #19A3FE;
 }
@@ -140,6 +151,8 @@ header {
     width: 100%;
     border-bottom: 1px solid #adadad;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1000;
     background-color: #FFFFFF99;
     backdrop-filter: blur(54.36563491821289px)
@@ -214,13 +227,16 @@ header .flex-call i:hover {
 }
 
 .messages {
-    height: 85vh;
+    height: 100%;
     flex: 1;
     padding: 10px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     margin-top: 50px;
+    margin-bottom: 80px;
+    margin-top: 600px;
+
 }
 
 .message {
@@ -330,11 +346,14 @@ body {
 footer {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     padding: 8px;
     height: 70px;
-    background-color: #ffffff99;
+    background-color: #FFFFFF99;
     border-top: 1px solid #adadad;
+    backdrop-filter: blur(60.36563491821289px);
+
 }
 
 footer button {
