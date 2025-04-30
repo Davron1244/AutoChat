@@ -5,7 +5,26 @@ function sendMessage() {
         const chat = document.getElementById("chat");
         const msgDiv = document.createElement("div");
         msgDiv.className = "message from-user";
-        msgDiv.innerText = msg;
+
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, "0");
+        const minutes = now.getMinutes().toString().padStart(2, "0");
+        const timestamp = `${hours}:${minutes} PM`;
+
+        const contentDiv = document.createElement("div");
+        contentDiv.className = "message-content";
+
+        const textSpan = document.createElement("span");
+        textSpan.className = "text";
+        textSpan.innerText = msg;
+
+        const timestampSpan = document.createElement("span");
+        timestampSpan.className = "timestamp";
+        timestampSpan.innerText = timestamp;
+
+        contentDiv.appendChild(textSpan);
+        contentDiv.appendChild(timestampSpan);
+        msgDiv.appendChild(contentDiv);
 
         const deleteBtn = document.createElement("div");
         deleteBtn.className = "delete-btn";
@@ -32,7 +51,7 @@ function sendMessage() {
         chat.scrollTop = chat.scrollHeight;
 
         let messages = JSON.parse(localStorage.getItem("MessageChat")) || [];
-        messages.push({ text: msg, from: "user" });
+        messages.push({ text: msg, from: "user", time: timestamp });
         localStorage.setItem("MessageChat", JSON.stringify(messages));
 
         input.value = "";
@@ -48,7 +67,24 @@ function loadMessages() {
     messages.forEach(msg => {
         const msgDiv = document.createElement("div");
         msgDiv.className = `message from-${msg.from}`;
-        msgDiv.innerText = msg.text;
+
+        const contentDiv = document.createElement("div");
+        contentDiv.className = "message-content";
+
+        const textSpan = document.createElement("span");
+        textSpan.className = "text";
+        textSpan.innerText = msg.text;
+
+        contentDiv.appendChild(textSpan);
+
+        if (msg.time) {
+            const timestampSpan = document.createElement("span");
+            timestampSpan.className = "timestamp";
+            timestampSpan.innerText = msg.time;
+            contentDiv.appendChild(timestampSpan);
+        }
+
+        msgDiv.appendChild(contentDiv);
 
         if (msg.from === "user") {
             const deleteBtn = document.createElement("div");
@@ -87,16 +123,6 @@ window.addEventListener("DOMContentLoaded", () => {
     if (darkMode) {
         document.body.classList.add("dark");
     }
-
-    document.querySelectorAll('.contact-firstname, .contact-lastname').forEach(function(el) {
-        const originalText = el.textContent;
-        const length = originalText.length;
-
-        if (length > 13) {
-            el.textContent = originalText.slice(0, 13) + '...';
-            el.style.fontSize = "18px";
-        }
-    });
 });
 
 window.addEventListener("load", function() {
